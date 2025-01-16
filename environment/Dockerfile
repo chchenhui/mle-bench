@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM nvidia/cuda:12.5.1-base-ubuntu22.04
 
 # Avoid interactive dialog from apt-get and other packages requiring configuration
 ENV DEBIAN_FRONTEND=noninteractive
@@ -36,7 +36,7 @@ RUN pip install virtualenv \
     && /opt/conda/bin/conda init
 
 ARG CONDA_ENV_NAME=agent
-ARG PYTHON_VERSION=3.11
+ARG PYTHON_VERSION=3.12
 ARG REQUIREMENTS=/tmp/requirements.txt
 
 COPY environment/requirements.txt ${REQUIREMENTS}
