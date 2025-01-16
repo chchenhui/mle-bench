@@ -65,7 +65,7 @@ networkx
 
 
 #others
-cchardet
+# cchardet
 pytest
 dacite
 tenacity
